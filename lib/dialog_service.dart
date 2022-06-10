@@ -51,4 +51,28 @@ class DialogService extends GetxService {
           }
         });
   }
+
+  // Call Confirm Dialog
+  void getConfirm({double? width, String? msg, String lang = 'ko', Function? callback, Function? noCallback}) {
+    callBackDialog.getConfirmAltCb(
+        width: width,
+        msg: msg,
+        lang: lang,
+        callBack: () {
+          if (callback != null) {
+            callback();
+          } else {
+            // ignore: avoid_print
+            print("NO CALLBACK");
+          }
+        },
+        noCallBack: () {
+          if (noCallback != null) {
+            noCallback();
+          } else {
+            // ignore: avoid_print
+            print("NO CALLBACK");
+          }
+        });
+  }
 }

@@ -24,13 +24,15 @@ class Home extends StatelessWidget {
       height: double.maxFinite,
       child: Column(
         children: [
-          const Text('Home'),
           spacer(height: 30),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                const Text('Test Buttons'),
+                const Text(
+                  'Test Buttons',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
                 spacer(height: 20),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -52,6 +54,9 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                      ),
                       onPressed: () {
                         // ignore: avoid_print
                         print('Call Fail Dialog');
@@ -69,6 +74,9 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.yellow[600],
+                      ),
                       onPressed: () {
                         // ignore: avoid_print
                         print('Call Warning Dialog');
@@ -82,6 +90,30 @@ class Home extends StatelessWidget {
                             });
                       },
                       child: const Text('Call Warning Dialog')),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.deepPurple,
+                      ),
+                      onPressed: () {
+                        // ignore: avoid_print
+                        print('Call Confirm Dialog');
+                        DialogService().getConfirm(
+                            width: 200,
+                            msg: 'Confirm',
+                            lang: 'ko',
+                            callback: () {
+                              // ignore: avoid_print
+                              print('Call Back Confirm Dialog!! -> OK!! ');
+                            },
+                            noCallback: () {
+                              // ignore: avoid_print
+                              print('Call Back Confirm Dialog!! -> No!! ');
+                            });
+                      },
+                      child: const Text('Call Confirm Dialog')),
                 )
               ],
             ),

@@ -2,7 +2,7 @@
 
 This package provides < Get Dialog Service >.
 
-you can show alert dialog just call method in this service widget
+You can show an alert dialog just call the method in this service widget.
 
 ## Sample Img
 

@@ -289,4 +289,21 @@ class CallBackDialog {
       ],
     ));
   }
+
+  //
+  // Get Loading Alert Diaglog
+  void getLoadingAltCb() {
+    Get.dialog(AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+      content: const SizedBox(
+        height: 200,
+        child: Center(
+            child: SizedBox(
+          height: 50.0,
+          width: 50.0,
+          child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.blue), strokeWidth: 5.0),
+        )),
+      ),
+    ));
+  }
 }

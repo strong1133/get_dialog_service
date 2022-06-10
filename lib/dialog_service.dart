@@ -75,4 +75,9 @@ class DialogService extends GetxService {
           }
         });
   }
+
+  // Call Loading Dialog
+  void getLoaidng() {
+    callBackDialog.getLoadingAltCb();
+  }
 }

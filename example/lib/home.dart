@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_dialog_service/dialog_service.dart';
 
 class Home extends StatelessWidget {
@@ -114,7 +115,54 @@ class Home extends StatelessWidget {
                             });
                       },
                       child: const Text('Call Confirm Dialog')),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.brown[400],
+                      ),
+                      onPressed: () {
+                        // ignore: avoid_print
+                        print('Call Loading Dialog');
+                        DialogService().getLoaidng();
+                        Future.delayed(const Duration(seconds: 3), () {
+                          // deleayed code here
+                          Get.back();
+                        });
+                      },
+                      child: const Text('Call Loading Dialog')),
+                ),
+                spacer(height: 10),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.amber[800],
+                      ),
+                      onPressed: () {
+                        // ignore: avoid_print
+                        print('Call Confirm Dialog');
+                        DialogService().getConfirm(
+                            msg: "Processing?",
+                            callback: () {
+                              DialogService().getLoaidng();
+                              Future.delayed(const Duration(seconds: 3), () {
+                                Get.back();
+                              }).then((value) => DialogService().getSuccess(msg: "Success Process"));
+                            },
+                            noCallback: () {
+                              DialogService().getFail(msg: "Exit Process");
+                            });
+
+                        // DialogService().getLoaidng();
+                        Future.delayed(const Duration(seconds: 3), () {
+                          // deleayed code here
+                          Get.back();
+                        });
+                      },
+                      child: const Text('Confirm -> Loading -> Success')),
+                ),
               ],
             ),
           ),

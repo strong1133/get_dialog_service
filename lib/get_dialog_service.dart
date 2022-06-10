@@ -1,7 +1,4 @@
 library get_dialog_service;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'dialog_service.dart' show DialogService;
+export 'call_back_dialog.dart' show CallBackDialog;

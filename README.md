@@ -1,9 +1,16 @@
-## marquee_in_flutter
+## get_dialog_service
 
-This package provides marquee widgets that receive items(type: `List<Widget>`) as input
+This package provides < Get Dialog Service >.
 
-![ezgif-7-4da492287b77](https://user-images.githubusercontent.com/9502063/116103391-817dde80-a6ea-11eb-94b7-b032d545ee1a.gif)
+you can show alert dialog just call method in this service widget
 
+## Sample Img
+
+![](https://raw.githubusercontent.com/strong1133/get_dialog_service/master/img/sample1.png)
+
+![](https://raw.githubusercontent.com/strong1133/get_dialog_service/master/img/sample2.png)
+
+![](https://raw.githubusercontent.com/strong1133/get_dialog_service/master/img/sample3.png)
 
 
 ## Doc
@@ -11,10 +18,5 @@ This package provides marquee widgets that receive items(type: `List<Widget>`) a
 - [GitHub Repository](https://github.com/strong1133/get_dialog_service)
 
 ## Usage
-There are two types.
+In your project, must use GetMaterialApp widget 
 
-### 1. ScrollMarquee
-- Scroll to left infinitely
-
-### 2. AlternateMarquee
-- Scroll left and right bounce infinitely

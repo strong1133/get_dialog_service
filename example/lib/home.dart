@@ -65,6 +65,23 @@ class Home extends StatelessWidget {
                             });
                       },
                       child: const Text('Call Fail Dialog')),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        // ignore: avoid_print
+                        print('Call Warning Dialog');
+                        DialogService().getWarn(
+                            width: 200,
+                            msg: 'Warning',
+                            lang: 'ko',
+                            callback: () {
+                              // ignore: avoid_print
+                              print('Call Back Warning Dialog!!');
+                            });
+                      },
+                      child: const Text('Call Warning Dialog')),
                 )
               ],
             ),

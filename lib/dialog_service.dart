@@ -4,6 +4,7 @@ import 'package:get_dialog_service/call_back_dialog.dart';
 class DialogService extends GetxService {
   CallBackDialog callBackDialog = CallBackDialog();
 
+  // Call Success Dialog
   void getSuccess({double? width, String? msg, String lang = 'ko', Function? callback}) {
     callBackDialog.getSuccessAltCb(
         width: width,
@@ -19,8 +20,25 @@ class DialogService extends GetxService {
         });
   }
 
+  // Call Fail Dialog
   void getFail({double? width, String? msg, String lang = 'ko', Function? callback}) {
-    callBackDialog.getFailsAltCb(
+    callBackDialog.getFailAltCb(
+        width: width,
+        msg: msg,
+        lang: lang,
+        callBack: () {
+          if (callback != null) {
+            callback();
+          } else {
+            // ignore: avoid_print
+            print("NO CALLBACK");
+          }
+        });
+  }
+
+  // Call Warinig Dialog
+  void getWarn({double? width, String? msg, String lang = 'ko', Function? callback}) {
+    callBackDialog.getWarnAltCb(
         width: width,
         msg: msg,
         lang: lang,

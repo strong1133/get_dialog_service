@@ -1,6 +1,6 @@
 name: get_dialog_service
 description: show dialog widget based on getx
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/strong1133/get_dialog_service
 
 environment:
